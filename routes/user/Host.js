@@ -30,7 +30,7 @@ import {
 } from '../../controllers/orderController.js'
 
 import { verifyToken } from '../../middlewares/authVerify.js';
-import upload from '../../middlewares/s3_multer.js';
+
 
 
 const router = express.Router();
@@ -44,7 +44,7 @@ router.post('/description',verifyToken,hostDescription)
 router.post('/AddDes',verifyToken,hostAddDesc)
 router.post('/location',verifyToken,hostLocation)
 router.post("/amenties",verifyToken,hostAmenities)
-router.post("/Images",upload.array("image"),verifyToken,hostImages)
+router.post("/Images",verifyToken,hostImages)
 router.post("/Price",verifyToken,hostPrice)
 router.post('/hostAddress',verifyToken,HostAddress)
 router.post('/BankDetails',verifyToken,HostBanksetup)
