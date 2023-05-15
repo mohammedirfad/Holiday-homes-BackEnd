@@ -12,7 +12,6 @@
   "author": "Mohammed irfad",
   "license": "ISC",
   "dependencies": {
-    "aws-sdk": "^2.1348.0",
     "body-parser": "^1.20.2",
     "cloudinary": "^1.36.2",
     "cookie-session": "^2.0.0",
