@@ -6,7 +6,8 @@ import {
     Signup,
     googleAuth,
     getUser,
-    getMyBookings
+    getMyBookings,
+    getHostData
 } from '../controllers/auth.js';
 
 import {
@@ -33,7 +34,7 @@ router.post('/complaintRegister',verifyToken,complaintRegister)
 
 
 router.get('/users',getUser);
-
+router.get('/getHostdata',getHostData)
 router.get("/myBookings",getMyBookings);
 router.get("/orderstatus",verifyToken,OrderStatus)
 

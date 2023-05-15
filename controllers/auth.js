@@ -234,3 +234,19 @@ export const getMyBookings = async (req,res)=>{
     }
 
 }
+
+//listed thinh
+export const getHostData = async (req, res) => {
+    console.log("admin Here",req.query);
+
+    try{
+        const {filter} =req.query
+        const response = await Property.find( { $and: [ { structure: filter}, { PropertyList: "listed"} ] })
+      
+        res.status(200).json(response)
+    }
+    catch (err) {
+        console.log(err)
+        res.status(500).json({ message: err })
+    }
+}

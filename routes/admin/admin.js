@@ -7,7 +7,7 @@ import {
     HostRejectedrequest,
     hostApprovel,
     hostRejected,
-    getHostData,
+   
     adminLogin,
     getPaymentRequests,
     getBankDetails,
@@ -26,7 +26,7 @@ const router = express.Router();
 router.get('/pendingRequest',AdminverifyToken,Hostpendingrequest);
 router.get('/ApprovedRequest',AdminverifyToken,HostApprovedrequest);
 router.get('/rejectedRequest',AdminverifyToken,HostRejectedrequest);
-router.get('/getHostdata',getHostData)
+
 router.get('/getpaymentRequests',AdminverifyToken,getPaymentRequests)
 router.get('/getBankDetails',AdminverifyToken,getBankDetails)
 router.get('/getorders',AdminverifyToken,getOrders)
