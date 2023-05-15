@@ -24,7 +24,7 @@ app.use(morgan("tiny"));
 app.use(bodyParser.json({limit: '50mb'}));
 app.use(bodyParser.urlencoded({limit: '50mb', extended: true}));
 const corsOptions = {
-    origin: 'http://localhost:3000',
+    origin: 'https://main.dy4ejt1tydsge.amplifyapp.com/',
     methods: 'GET, POST',
     allowedHeaders: 'Content-Type, Authorization',
     optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
