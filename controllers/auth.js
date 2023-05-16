@@ -237,7 +237,7 @@ export const getMyBookings = async (req,res)=>{
 
 //listed thinh
 export const getHostData = async (req, res) => {
-    console.log("admin Here",req.query);
+    console.log("user here",req.query);
 
     try{
         const {filter} =req.query
