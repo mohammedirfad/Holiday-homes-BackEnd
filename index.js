@@ -24,7 +24,7 @@ app.use(morgan("tiny"));
 app.use(bodyParser.json({limit: '50mb'}));
 app.use(bodyParser.urlencoded({limit: '50mb', extended: true}));
 const corsOptions = {
-    origin: 'https://holiday-homes-frondend.onrender.com',
+    origin: 'https://main.dumi2cpm1nms5.amplifyapp.com/',
     // origin: '',
     methods: 'GET, POST',
     allowedHeaders: 'Content-Type, Authorization',
