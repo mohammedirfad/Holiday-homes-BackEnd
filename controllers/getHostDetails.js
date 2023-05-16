@@ -16,7 +16,7 @@ export const getHostDetails = async (req, res) => {
         res.status(500).json({ message: err })
     }
 }
-
+//dsfgsdfgsdgsdfgsdg
 // User-host-single-details
 export const getSingledata = async (req, res) => {
     
