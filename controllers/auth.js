@@ -6,6 +6,7 @@ import Bookings from '../models/orderSchema.js';
 import { generateToken } from "../middlewares/authVerify.js"; 
 import { SendOtp,VerifyOtp} from '../middlewares/Twilio.js';
 import mongoose from 'mongoose';
+import Property from '../models/hostSetup.js'
 
 
 
