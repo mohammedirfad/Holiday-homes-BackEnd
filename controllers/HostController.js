@@ -261,7 +261,7 @@ export const hostImages = async (req, res) => {
     console.log("here...",)
     try {
 
-    console.log(req.files);
+    console.log(req.body.host);
     console.log("/.,.,.,.,.",req.body);
     const response = await uploadMultipleImages(req.body.formData)
     console.log("here...",response)
