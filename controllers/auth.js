@@ -23,14 +23,14 @@ export const userAuth = async (req,res)=>{
         const user = await UserModel.findOne({PhoneNumber:req.body.num})
         console.log(user)
         if(user){
-            console.log(1.1)
+            
             SendOtp(req.body.num);
-            console.log(1.2)
+           
             res.status(200).json({message:"Succesfully Done!"})
         
         }
         else{   
-            console.log("nooooo user")
+     
             return res.status(202).json({message:"no user Registed. Signup please "})
         }
     }
@@ -114,7 +114,7 @@ export const Signup = async (req,res)=>{
   
     }
     catch(err){
-        console.log(err,"<><><>")
+      
         res.status(500).json({message:"something went wrong"})
     }
 }
@@ -163,7 +163,7 @@ export const googleAuth = async (req,res)=>{
         } else {
             console.log("Here");
             const { given_name,family_name,picture,email } =req.body.datas.data;
-            console.log(picture,"LLLLLLLLLLLL")
+          
           
             const User = new UserModel ({
                 FirstName: given_name,
@@ -192,13 +192,13 @@ export const googleAuth = async (req,res)=>{
 // get-user
 
 export const getUser = async (req,res)=>{
-    console.log("here i am")
+   
     try{
-        console.log("here i am")
-        console.log(req.query,"';;;;;;;")
+       
+      
         const { id } = req.query
         const ids = new mongoose.Types.ObjectId(id);
-        console.log(ids,"///ids")
+ 
         const response = await UserModel.findOne({_id:ids});
         console.log(1)
         console.log(response)
@@ -216,9 +216,9 @@ export const getUser = async (req,res)=>{
 // Get-user-bookings
 
 export const getMyBookings = async (req,res)=>{
-    console.log("here i am")
+   
     try{
-        console.log("here i am")
+       
         console.log(req.query,"';;;;;;;")
         const { id } = req.query
         const ids = new mongoose.Types.ObjectId(id);
@@ -238,7 +238,7 @@ export const getMyBookings = async (req,res)=>{
 
 //listed thinh
 export const getHostData = async (req, res) => {
-    console.log("user here",req.query);
+
 
     try{
         const {filter} =req.query

@@ -6,7 +6,7 @@ import {uploadImage, uploadMultipleImages} from '../middlewares/cloudinary.js'
 
 // User-host-struture
 export const hostStructure = async (req, res) => {
-    console.log("ethiiii")
+   
     const { structures, id } = req.body
     console.log(structures)
     console.log(req.body);
@@ -39,10 +39,7 @@ export const hostStructure = async (req, res) => {
 export const hostfloorPlan = async (req, res) => {
 
     const { guests, bedroom, bathroom, beds ,host } = req.body
-    console.log(req.body);
-    console.log(guests,"......................")
-    
-    
+
     try {
         const a = new mongoose.Types.ObjectId(host)
  
@@ -58,15 +55,12 @@ export const hostfloorPlan = async (req, res) => {
               } else if (!item) {
                 res.status(404).send('Item not found');
               } else {
-                console.log(item,"????????????????????????");
+               
                 res.status(200).json({item});
               }
             }
           );
-   
-//    const response =  await Property.updateOne({_id:a}, { $set: {"floorplan.guest" : guests, "floorplan.beds": beds,"floorplan.bathrooms":bathroom,"floorplan.bedrooms":bedroom} },{upsert:true}, { new: true })
-//    console.log(response,"wqjrhygggggggggggggggggggggggggggggggggggggggggggg")
-//    res.status(200).json({floorplan:response.floorplan})
+  
 
     }
 
@@ -79,9 +73,8 @@ export const hostfloorPlan = async (req, res) => {
 
 // User-host-location
 export const hostLocation = async (req, res) => {
-    console.log("jhuftdtrd");
+
     const { location,host } = req.body
-    console.log(req.body, "jhuftdtrd");
 
     try {
       
@@ -99,7 +92,7 @@ export const hostLocation = async (req, res) => {
                } else if (!item) {
                  res.status(404).send('Item not found');
                } else {
-                 console.log(item,"????????????????????????");
+             
                  res.status(200).json({item});
                }
              }
@@ -135,7 +128,7 @@ export const hostTitle = async (req, res) => {
                } else if (!item) {
                  res.status(404).send('Item not found');
                } else {
-                 console.log(item,"????????????????????????");
+          
                  res.status(200).json({item});
                }
              }
@@ -170,7 +163,7 @@ export const hostDescription = async (req, res) => {
                } else if (!item) {
                  res.status(404).send('Item not found');
                } else {
-                 console.log(item,"????????????????????????");
+               
                  res.status(200).json({item});
                }
              }
@@ -205,7 +198,7 @@ export const hostAddDesc = async (req, res) => {
                } else if (!item) {
                  res.status(404).send('Item not found');
                } else {
-                 console.log(item,"????????????????????????");
+               
                  res.status(200).json({item});
                }
              }
@@ -240,7 +233,7 @@ export const hostAmenities = async (req, res) => {
                } else if (!item) {
                  res.status(404).send('Item not found');
                } else {
-                 console.log(item,"????????????????????????");
+             
                  res.status(200).json({item});
                }
              }
@@ -258,7 +251,7 @@ export const hostAmenities = async (req, res) => {
 // User-host-Images
 export const hostImages = async (req, res) => {
   
-    console.log("here...",)
+
     try {
 
     console.log(req.body.host);
@@ -267,26 +260,10 @@ export const hostImages = async (req, res) => {
     console.log("here...",response)
     const a = new mongoose.Types.ObjectId(req.body.host)
     const imageResponse =  await Property.updateOne({_id:a}, { $set: {images:response,status:"image updated"} },{upsert:true}, { new: true })
-    console.log(imageResponse,"wqjrhygggggggggggggggggggggggggggggggggggggggggggg")
+    console.log(imageResponse,"w")
     res.status(200).json({message:"updated successfully"})
  
-    // await Property.findByIdAndUpdate(
-    //      { _id:a},
-    //      { $set: {images:response,status:"image updated"} },
-    //      {upsert:true},
-    //      { new: true },
-    //      (err, item) => {
-    //        if (err) {
-    //          console.error(err);
-    //          res.status(500).send('Server error');
-    //        } else if (!item) {
-    //          res.status(404).send('Item not found');
-    //        } else {
-    //          console.log(item,"????????????????????????");
-    //          res.status(200).json({item});
-    //        }
-    //      }
-    //    );
+
     }
 
     catch (err) {
@@ -318,10 +295,10 @@ export const hostPrice = async (req, res) => {
                } else if (!item) {
                  res.status(404).send('Item not found');
                } else {
-                 console.log(item,"????????????????????????");
+                
                  res.status(200).json({item});
                }
-               console.log(item,">..........................................................................")
+            
              }
            );
     }
@@ -337,9 +314,7 @@ export const hostPrice = async (req, res) => {
 
 
 export const HostVerify = async (req, res) => {
-  console.log("kn qj------------------------------------1111111-----------------------------------")
  
-  
   const {host,IdType} = req.body
   console.log(req.body,"..........",IdType);
   
@@ -349,7 +324,7 @@ export const HostVerify = async (req, res) => {
   try {
      const a = new mongoose.Types.ObjectId(host)
    const response =  await Property.updateOne({_id:a}, { $set: {Id_front_Image:frontImage,Id_back_Image:backImage,IdType:IdType} },{upsert:true}, { new: true })
-   console.log(response,"wqjrhygggggggggggggggggggggggggggggggggggggggggggg")
+
    res.status(200).json({message:"updated successfully"})
       
   }
@@ -366,7 +341,7 @@ export const HostVerify = async (req, res) => {
 
 
 export const HostPhotoverify = async (req, res) => {
-  console.log("kn qj------------------------------------1111111-----------------------------------")
+
 
   
   const {image1,host} = req.body
@@ -378,7 +353,7 @@ export const HostPhotoverify = async (req, res) => {
   try {
      const a = new mongoose.Types.ObjectId(host)
    const response =  await Property.updateOne({_id:a}, { $set: {Host_Selfie:userSelfieimage,Verification_Status:"user Image updatted",Verification_list:"Verification Pending"} },{upsert:true}, { new: true })
-   console.log(response,"wqjrhygggggggggggggggggggggggggggggggggggggggggggg")
+
    res.status(200).json({message:"updated successfully"})
       
   }
@@ -399,7 +374,7 @@ export const getHostDetails = async (req, res) => {
       console.log(req.query)
       const a = new mongoose.Types.ObjectId(req.query.filter)
       const response = await Property.find({owner:a}).sort({createdAt:-1})
-      console.log(response,":::::::::")
+   
       res.status(200).json(response)
     }
 
@@ -411,13 +386,13 @@ export const getHostDetails = async (req, res) => {
 
 export const getHostVerification_list = async (req, res) => {
     
-  console.log(" while creating host get status")
+
   try {
     console.log(req.query,"zsss")
     const {host} = req.query
     const a = new mongoose.Types.ObjectId(host)
     const response = await Property.findOne({_id:a});
-    console.log(response.Verification_list,":::::::::")
+
     res.status(200).json(response.Verification_list)
   }
 
@@ -436,7 +411,7 @@ export const getSingledata = async (req, res) => {
     const {host} = req.query;
     
     const response = await Property.findOne({_id:host}).populate("owner")
-    console.log(response,":::::::::")
+
     res.status(200).json(response)
   }
 
