@@ -40,12 +40,11 @@ export const HostAddress = async (req, res) => {
 
 export const HostBanksetup = async (req, res) => {
     try{
-        console.log("Host")
+     
         console.log(req.body)
         const {accountName,accountNumber,branch,ifscCode,pan,id,user_id} = req.body;
 
         const User = await UserModel.find({_id:user_id})
-        console.log("User",User);
         if(User!=null){
             const a = new mongoose.Types.ObjectId(id)
             await Hostdetails.findByIdAndUpdate(
@@ -60,7 +59,7 @@ export const HostBanksetup = async (req, res) => {
                   } else if (!item) {
                     res.status(404).send('Item not found');
                   } else {
-                    console.log(item,"????????????????????????");
+                
                     res.status(200).json({item});
                   }
                 }
