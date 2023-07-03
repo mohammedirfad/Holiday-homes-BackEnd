@@ -5,12 +5,11 @@ import UserModel from '../models/user.js';
 //host-Address
 export const HostAddress = async (req, res) => {
     try{
-        console.log("Host")
+       
         console.log(req.body)
         const {streets,flats,citys,states,zipcodes,id} = req.body;
 
         const User = await UserModel.find({_id:id})
-        console.log("User",User);
         if(User!=null){
            const users = new Hostdetails({
                 owner:id,

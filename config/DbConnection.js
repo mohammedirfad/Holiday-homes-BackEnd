@@ -10,7 +10,7 @@ const DBconnect = async () =>{
         console.log("DB connected successfully ..")
     }
     catch(err){
-        // throw err;
+     
         console.log("err",err)
     }
 }

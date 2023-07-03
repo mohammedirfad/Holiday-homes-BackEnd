@@ -62,7 +62,7 @@ export const Signup = async (req,res)=>{
         await newUser.save();
       
         const Token = generateToken(newUser,201);
-        console.log(Token,"><<><><")
+     
         res.status(201).json({newUser,Token})
 
          
